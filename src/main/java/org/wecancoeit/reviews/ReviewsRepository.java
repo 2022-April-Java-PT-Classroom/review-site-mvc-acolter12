@@ -2,6 +2,7 @@ package org.wecancoeit.reviews;
 
 import org.springframework.stereotype.Repository;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -20,4 +21,7 @@ public class ReviewsRepository {
         return reviewsList.get(id);
     }
 
+    public Collection<Reviews> findAll() {
+        return reviewsList.values();
+    }
 }
