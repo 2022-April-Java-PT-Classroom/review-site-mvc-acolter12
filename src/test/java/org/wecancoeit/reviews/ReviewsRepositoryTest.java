@@ -13,8 +13,8 @@ public class ReviewsRepositoryTest {
 
     private ReviewsRepository underTest;
 
-    private Reviews reviewOne = new Reviews(1L, "Test 1", "Test", "Review test one.");
-    private Reviews reviewTwo = new Reviews(2L, "Test 2", "Test", "Review test two.");
+    private Reviews reviewOne = new Reviews(1L, "Test 1", "Test","Test", "Review test one.");
+    private Reviews reviewTwo = new Reviews(2L, "Test 2", "Test", "Test","Review test two.");
 
     @Test
     public void shouldBeAbleToFindASingleReview() {

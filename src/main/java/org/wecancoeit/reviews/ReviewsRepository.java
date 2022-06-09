@@ -11,6 +11,11 @@ public class ReviewsRepository {
 
     Map<Long, Reviews> reviewsList = new HashMap<>();
 
+    public ReviewsRepository() {
+        Reviews S = new Reviews(1L, "S", "Q","B", "D");
+
+        reviewsList.put(S.getId(), S);
+    }
     public ReviewsRepository(Reviews ...reviewsToAdd) {
         for(Reviews review: reviewsToAdd){
             reviewsList.put(review.getId(), review);

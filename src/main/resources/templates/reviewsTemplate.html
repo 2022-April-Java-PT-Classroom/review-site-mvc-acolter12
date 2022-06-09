@@ -12,7 +12,7 @@
 
 <main>
     <ul>
-        <li ></a></li>
+        <li th:each="reviews:${reviewModel}"><a th:href="@{/reviews(id=${reviews.id})}" th:text="${reviews.name}"></a></li>
     </ul>
 
 </main>
