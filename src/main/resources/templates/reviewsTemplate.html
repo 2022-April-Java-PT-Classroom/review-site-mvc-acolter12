@@ -1,10 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Product Reviews of Acquisitions, Inc.</title>
 </head>
 <body>
+
+<header>
+    <h1>All Reviews</h1>
+</header>
+
+<main>
+    <ul>
+        <li th:each="reviews:${reviewsModel}"><a th:href="@{/reviews(id=${reviews.id})}" th:text="{review.name}"></a></li>
+    </ul>
+
+</main>
+
+<footer>
+    <small>&copy Acquisitions, Inc.</small>
+</footer>
 
 </body>
 </html>

@@ -1,7 +1,6 @@
 package org.wecancoeit.reviews;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Repository;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -17,11 +16,16 @@ public class ReviewsController {
     @RequestMapping("/reviews")
     public String findAllReviews(Model model) {
         model.addAttribute("reviewsModel", reviewsRepo.findAll());
-        return "reviewsTemplate";
+        return "reviewsTemplate.html";
     }
 
     @RequestMapping("/review")
-    public String findOneReview(@RequestParam(value="id") Long id, Model model) {
+    public String findOneReview(@RequestParam(value="id") Long id, Model model) throws ReviewNotFoundException{
+
+        if(reviewsRepo.findOne(id) == null){
+            throw new ReviewNotFoundException();
+        }
+
         model.addAttribute("reviewModel", reviewsRepo.findOne(id));
         return "reviewTemplate";
     }

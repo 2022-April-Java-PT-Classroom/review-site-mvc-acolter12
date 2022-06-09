@@ -15,8 +15,11 @@ import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
+
 @WebMvcTest(ReviewsController.class)
 public class ReviewsControllerMvcTest {
+
+
 
     @Autowired
     private MockMvc mockMvc;
@@ -31,7 +34,7 @@ public class ReviewsControllerMvcTest {
     private Reviews reviewTwo;
 
     @Test
-    public void shouldBeOkForAllCoursesInTheTemplate() throws Exception{
+    public void shouldBeOkForAllCoursesInTheTemplate() throws Exception {
         mockMvc.perform(get("/reviews")).andExpect(status().isOk()).andExpect(view().name("reviewsTemplate"));
     }
 
@@ -46,6 +49,6 @@ public class ReviewsControllerMvcTest {
     public void shouldBeOkForOneReviewInReviewsTemplate() throws Exception{
         Long reviewOneId = 1L;
         when(reviewsRepo.findOne(reviewOneId)).thenReturn(reviewOne);
-        mockMvc.perform(get("/course?id=1")).andExpect(status().isOk()).andExpect(view().name("reviewTemplate"));
+        mockMvc.perform(get("/review?id=1")).andExpect(status().isOk()).andExpect(view().name("reviewTemplate"));
     }
 }
