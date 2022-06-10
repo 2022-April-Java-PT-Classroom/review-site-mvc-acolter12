@@ -7,23 +7,22 @@
 <body>
 
 <header>
-    <h1 th:text="${reviewModel.productName}">Review</h1>
+    <h1>Movie Review of: <span th:text="${reviewModel.productName}"></span></h1>
 </header>
 
 <main>
-    <ul>
-        <p><a href="/reviews">See All Reviews</a></p>
-        <li th:text="${reviewModel.productName}"></li>
-    </ul>
-
     <figure>
         <img th:src="${reviewModel.imgUrl}">
     </figure>
 
-    <h2 th:text="${reviewModel.description}"></h2>
+    <p>Year: <span th:text="${reviewModel.year}"></span></p>
+    <p>Category: <span th:text="${reviewModel.category}"></span></p>
+    <p>Review: <span th:text="${reviewModel.description}"></span></p>
+
+    <p><a href="/reviews">See All Reviews</a></p>
 </main>
 
-<footer>&copy Acquisitions, Inc.</footer>
+<footer>&copy 2022 ARC Acquisitions, Inc.</footer>
 
 </body>
 </html>

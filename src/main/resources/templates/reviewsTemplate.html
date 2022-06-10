@@ -7,18 +7,18 @@
 <body>
 
 <header>
-    <h1>All Reviews</h1>
+    <h1>All Horror Movie Reviews</h1>
 </header>
 
 <main>
     <ul>
-        <li th:each="reviews:${reviewModel}"><a th:href="@{/reviews(id=${reviews.id})}" th:text="${reviews.name}"></a></li>
+        <li th:each="reviews:${reviewsModel}"><a th:href="@{/review(id=${reviews.id})}" th:text="${reviews.productName}"></a></li>
     </ul>
 
 </main>
 
 <footer>
-    <small>&copy Acquisitions, Inc.</small>
+    <small>&copy 2022 ARC Acquisitions, Inc.</small>
 </footer>
 
 </body>
