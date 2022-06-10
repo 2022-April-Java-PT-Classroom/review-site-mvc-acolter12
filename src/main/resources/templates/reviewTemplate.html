@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${reviewModel.productName}">Review</title>
+</head>
+<body>
+
+<header>
+    <h1 th:text="${reviewModel.productName}">Review</h1>
+</header>
+
+<main>
+    <ul>
+        <p><a href="/reviews">See All Reviews</a></p>
+        <li th:text="${reviewModel.productName}"></li>
+    </ul>
+
+    <figure>
+        <img th:src="${reviewModel.imgUrl}">
+    </figure>
+
+    <h2 th:text="${reviewModel.description}"></h2>
+</main>
+
+<footer>&copy Acquisitions, Inc.</footer>
+
+</body>
+</html>

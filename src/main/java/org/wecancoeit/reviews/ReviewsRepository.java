@@ -12,7 +12,7 @@ public class ReviewsRepository {
     Map<Long, Reviews> reviewsList = new HashMap<>();
 
     public ReviewsRepository() {
-        Reviews S = new Reviews(1L, "S", "Q","B", "D");
+        Reviews S = new Reviews(1L, "S", "../images/strawberries.jpg","B", "D");
 
         reviewsList.put(S.getId(), S);
     }

@@ -4,14 +4,14 @@ public class Reviews {
 
     private Long id;
     private String productName;
-    private String image;
+    private String imgUrl;
     private String category;
     private String description;
 
-    public Reviews(long id, String productName, String image, String category, String description) {
+    public Reviews(long id, String productName, String imgUrl, String category, String description) {
         this.id = id;
         this.productName = productName;
-        this.image = image;
+        this.imgUrl = imgUrl;
         this.category = category;
         this.description = description;
     }
@@ -22,6 +22,10 @@ public class Reviews {
 
     public String getProductName() {
         return productName;
+    }
+
+    public String getImgUrl() {
+        return imgUrl;
     }
 
     public String getCategory(){
