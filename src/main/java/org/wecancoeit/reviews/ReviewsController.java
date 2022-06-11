@@ -13,6 +13,11 @@ public class ReviewsController {
     @Resource
     private ReviewsRepository reviewsRepo;
 
+    @RequestMapping("")
+    public String home(Model model) {
+        return "home";
+    }
+
     @RequestMapping("/reviews")
     public String findAllReviews(Model model) {
         model.addAttribute("reviewsModel", reviewsRepo.findAll());
