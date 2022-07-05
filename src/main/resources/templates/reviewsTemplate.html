@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>All Horror Movie Reviews</title>
+</head>
+<body>
+<div class="container">
+<header>
+    <h1>All Horror Movie Reviews</h1>
+</header>
+
+<main>
+    <ul>
+        <li th:each="reviews:${reviewsModel}"><a th:href="@{/review(id=${reviews.id})}" th:text="${reviews.productName}"></a></li>
+    </ul>
+    <h5><a href="/">Go Home!</a></h5>
+</main>
+
+<footer>
+    <small>&copy 2022 ARC Acquisitions, Inc.</small>
+</footer>
+</div>
+</body>
+</html>

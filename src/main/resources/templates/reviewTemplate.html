@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/style.css">
+    <title th:text="${reviewModel.productName}">Review</title>
+</head>
+<body>
+<div class="container">
+<header>
+    <h1>Movie Review of: <span th:text="${reviewModel.productName}"></span></h1>
+</header>
+
+<main>
+    <figure>
+        <img th:src="${reviewModel.imgUrl}">
+    </figure>
+
+    <article class="movie_info">
+    <p>Year: <span th:text="${reviewModel.year}"></span></p>
+    <p>Category: <span th:text="${reviewModel.category}"></span></p>
+    <p>Review: <span th:text="${reviewModel.description}"></span></p>
+    </article>
+
+    <h5><a href="/reviews">See All Reviews</a></h5>
+    <h5><a href="/">Go Home!</a></h5>
+</main>
+
+<footer>
+    <small>&copy 2022 ARC Acquisitions, Inc.</small>
+</footer>
+</div>
+</body>
+</html>
